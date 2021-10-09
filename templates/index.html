@@ -1,0 +1,33 @@
+
+<!doctype html>
+<html>
+    <head>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="../static/js/bootstrap-filestyle.min.js"> </script>
+    </head>
+    <body>
+        <div class="container py-3">
+            <header class="text-white text-center">
+                <a href="./" class="text-white"><h1 class="display-5 text-white">Simple reverse image search</h1></a>
+            </header>
+            <div class="container py-3">
+                <form method="POST" enctype="multipart/form-data" class="text-white">
+                    <input type="file" name="query_img" accept="image/*" class="filestyle" data-buttonBefore="true"
+                        data-placeholder="No file"><br>
+                    <input type="submit" class="btn btn-secondary">
+                </form>
+            </div>
+            <div class="container py-3">
+                <h2 class="display-6 text-white">Query:</h2>
+                {% if query_path %}
+                <img src="{{ query_path }}" width="600px">
+                {% endif %}
+                <h2 class="display-6 text-white">Result:</h2>
+                <a href="//{{result}}">{{ result }}</a>
+            </div>
+        </div>
+    </body>
+</html>
