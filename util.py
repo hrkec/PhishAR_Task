@@ -71,5 +71,4 @@ def classify(image_path):
 
     outputs = model(img)
     _, predicted = torch.max(outputs, 1)
-    print(f'{classes[predicted]}')
     return classes[predicted]
