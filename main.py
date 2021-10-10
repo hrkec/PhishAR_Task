@@ -2,7 +2,6 @@ import os
 
 import pandas as pd
 import torch
-from matplotlib import pyplot as plt
 from torch.nn import CrossEntropyLoss
 from torch.optim import Adam
 
